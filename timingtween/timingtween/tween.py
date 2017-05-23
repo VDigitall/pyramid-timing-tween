@@ -15,7 +15,9 @@ def timing_tween_factory(handler, registry):
             finally:
                 delta = time.time() - start
                 log.debug('The request took %s seconds' % (delta),
-                          extra={'REQUEST_PROCESS_TIME': delta})
+                          extra={'REQUEST_PROCESS_TIME': delta,
+                                 'REQUEST_METHOD': request.method,
+                                 'RESPONSE_CODE': response.status_code})
             return response
         return timing_tween
     # if timing support is not enabled, return the original
