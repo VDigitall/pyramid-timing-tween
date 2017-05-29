@@ -25,6 +25,6 @@ In application settings add options `do_timing = true`
 from pyramid.config import Configurator
 from timingtween.timingtween.tween import includeme as include_tween
 config = Configurator()
-include_tween(config)
 config.settings.do_timing = True
+include_tween(config)
 ```
