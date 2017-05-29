@@ -1,6 +1,7 @@
 # Introduction
 
-Timing tween for measure request process time.
+Timing tween for measure request process time as pyramid plugin.
+Write to log `request processing time`, `request method` and `response status code` on `DEBUG` level.
 
 ### Installation
 
@@ -25,4 +26,5 @@ from pyramid.config import Configurator
 from timingtween.timingtween.tween import includeme as include_tween
 config = Configurator()
 include_tween(config)
+config.settings.do_timing = True
 ```
